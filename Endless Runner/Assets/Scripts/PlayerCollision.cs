@@ -10,6 +10,7 @@ public class PlayerCollision : MonoBehaviour{
         if (collision.collider.tag.Equals("Obstacle"))
         {
             playerMovement.enabled = false;
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
             FindObjectOfType<GameManager>().EndGame();
         }  
     }

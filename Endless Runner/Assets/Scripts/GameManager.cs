@@ -28,5 +28,10 @@ public class GameManager : MonoBehaviour
     public void CompleteLevel()
     {
         completeLevelUI.SetActive(true);
-    } 
+    }
+    
+    public bool getGameEnded()
+    {
+        return gameEnded;
+    }
 }
