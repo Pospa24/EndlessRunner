@@ -126,4 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 3941917410300003737}
-  forwardSpeed: -3000
+  forwardSpeed: -2000

@@ -7,26 +7,25 @@ public class PlayerMovement : MonoBehaviour
     public float forwardSpeed = 2000f;
     public float sidewaysSpeed = 500f;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+   
     // Update is called once per frame
     // FixedUpdate is for pyhsics
     void FixedUpdate()
     {
         playerBody.AddForce(0, 0, forwardSpeed * Time.deltaTime);
-
-        if (Input.GetKey("a"))
-        {
-            playerBody.AddForce(-sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        } 
         
-        if (Input.GetKey("d"))
+        if (Input.touchCount > 0)
         {
-            playerBody.AddForce(sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+   
+            if (Input.GetKey("a") || Input.GetTouch(0).position.x < 100)
+            {
+                playerBody.AddForce(-sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            }
+
+            if (Input.GetKey("d") || Input.GetTouch(0).position.x > 100)
+            {
+                playerBody.AddForce(sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            }
         }
 
         if (playerBody.position.y < -1f)
