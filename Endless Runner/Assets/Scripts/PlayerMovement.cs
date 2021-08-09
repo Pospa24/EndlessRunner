@@ -17,12 +17,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.touchCount > 0)
         {
    
-            if (Input.GetKey("a") || Input.GetTouch(0).position.x < 100)
+            if (Input.GetKey("a") || Input.GetTouch(0).position.x < Screen.width / 2)
             {
                 playerBody.AddForce(-sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             }
 
-            if (Input.GetKey("d") || Input.GetTouch(0).position.x > 100)
+            if (Input.GetKey("d") || Input.GetTouch(0).position.x > Screen.width / 2)
             {
                 playerBody.AddForce(sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             }
